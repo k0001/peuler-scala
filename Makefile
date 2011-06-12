@@ -18,3 +18,5 @@ pe1: pe1.scala basics
 pe2: pe2.scala basics
 	$(SCALAC) pe2.scala
 
+pe3: pe3.scala basics
+	$(SCALAC) pe3.scala
