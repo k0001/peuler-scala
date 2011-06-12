@@ -7,11 +7,11 @@ I'm mainly interested in experimenting with the Scala programming
 language, so my solutions won't focus in mathematical beauty nor
 performance, but instead on exploring Scala features and idioms.
 
-Code is compatible with Scala 2.9.0.
+Code is compatible with **Scala 2.9.0**.
 
 
 Building & running problem solution
------------------------------------
+===================================
 
 If you want to build the solution to the problem 1:
 
@@ -24,7 +24,7 @@ run it as:
 
 
 Naming conventions
-''''''''''''''''''
+------------------
 
 Each problem solution is a Scala object under the package ``pe``.
 Objects are named ``PEx``, where ``x`` is the problem number.
