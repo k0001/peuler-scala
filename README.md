@@ -13,14 +13,23 @@ Code is compatible with **Scala 2.9.0**.
 Building & running problem solution
 ===================================
 
-If you want to build the solution to the problem 1:
+If you want to build the solution to the problem 1, which is located in
+the ``pe1.scala`` file:
 
     make pe1
 
-The solution will be built under the ``build`` directory. You can then
+If you want to build all solutions at once, run:
+
+    make all
+
+Java binaries will be built under the ``build`` directory. You can then
 run it as:
 
     scala -cp ./build pe.PE1
+
+Or you can use this equivalent shorcut:
+
+    make run main=pe.PE1
 
 
 Naming conventions

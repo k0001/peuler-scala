@@ -1,22 +1,32 @@
-SCALAC := fsc -d build -deprecation
+BUILD_DIR := ./build
+SCALAC := fsc -d $(BUILD_DIR) -deprecation
+SCALA := scala
 
+.PHONY: all
 
-clean:
-	rm -rf build
+all: util-libs
+	$(SCALAC) $(shell ls pe*.scala)
+
+run:
+ifeq ($(strip $(main)),)
+	@echo "Usage: make run main=<main scala object path>"
+	@echo "Example: make run main=pe.PE2"
+	exit 1
+endif
+	$(SCALA) -cp $(BUILD_DIR) $(main)
+
+pe%: pe%.scala basics
+	$(SCALAC) $<
+
+basics: build-dir util-libs
 
 build-dir:
-	mkdir -p build
+	mkdir -p $(BUILD_DIR)
 
 util-libs: build-dir util/primes.scala
 	$(SCALAC) util/primes.scala
 
-basics: build-dir util-libs
+clean:
+	rm -rf $(BUILD_DIR)
 
-pe1: pe1.scala basics
-	$(SCALAC) pe1.scala
 
-pe2: pe2.scala basics
-	$(SCALAC) pe2.scala
-
-pe3: pe3.scala basics
-	$(SCALAC) pe3.scala
